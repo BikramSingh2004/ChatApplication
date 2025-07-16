@@ -4,10 +4,12 @@ import { UserProvider } from './context/user.context'
 
 const App = () => {
   return (
-    <UserProvider>
-      <AppRoutes />
-    </UserProvider>
-  )
+    <div className="min-h-screen bg-blue-50 ">
+      <UserProvider>
+        <AppRoutes />
+      </UserProvider>
+    </div>
+  );
 }
 
 export default App
