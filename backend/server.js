@@ -6,10 +6,21 @@ import jwt from 'jsonwebtoken';
 import mongoose from 'mongoose';
 import projectModel from './models/project.model.js';
 import { generateResult } from './services/ai.service.js';
+// const cors = require('cors');
+import cors from "cors";
+
 
 const port = process.env.PORT || 3000;
 
+app.use(
+  cors({
+    origin: process.env.URL, // allow frontend
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
 
+app.use(express.json());
 
 const server = http.createServer(app);
 const io = new Server(server, {
